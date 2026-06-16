@@ -5,31 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Retrieve - About Us</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: #fcfbfa; color: #2c2a29; line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+        body { background-color: #ffffff; color: #2c2a29; line-height: 1.6; }
         
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 6%; background-color: #ffffff; border-bottom: 1px solid #e7e5e2; }
-        .logo { font-size: 1.4rem; font-weight: 700; color: #2c2a29; text-decoration: none; letter-spacing: -0.3px; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 6%; background-color: #072146; border-bottom: 3px solid #1d428a; }
+        .brand-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo-img { height: 40px; width: auto; object-fit: contain; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: #ffffff; letter-spacing: -0.3px; }
         nav ul { display: flex; list-style: none; gap: 8px; }
-        nav ul a { text-decoration: none; color: #595551; font-weight: 500; padding: 10px 18px; border-radius: 4px; transition: all 0.15s ease; }
-        nav ul a:hover, nav ul a.active { color: #ffffff; background-color: #e02229; }
+        nav ul a { text-decoration: none; color: #e2e8f0; font-weight: 500; padding: 8px 16px; border-radius: 4px; font-size: 0.95rem; transition: all 0.15s ease; }
+        nav ul a:hover, nav ul a.active { color: #072146; background-color: #ffffff; }
 
-        main { max-width: 800px; margin: 50px auto; padding: 50px; background: #ffffff; border-radius: 8px; border: 1px solid #e7e5e2; box-shadow: 0 4px 20px rgba(0,0,0,0.01); text-align: left; }
-        h1 { font-size: 2.6rem; font-weight: 400; margin-bottom: 30px; color: #1f1e1d; text-align: center; }
+        .redwood-hero { background-color: #fcfbfa; border-bottom: 1px solid #e7e5e2; padding: 60px 6%; text-align: left; }
+        .redwood-hero h1 { font-size: 2.8rem; font-weight: 300; color: #072146; letter-spacing: -0.5px; margin-bottom: 8px; }
+        .redwood-hero p { font-size: 1.2rem; color: #595551; max-width: 700px; font-weight: 300; }
+
+        main { max-width: 800px; margin: 50px auto; padding: 0 6%; text-align: left; }
         p { margin-bottom: 24px; font-size: 1.05rem; color: #595551; }
         
-        .highlight-box { background-color: #fcfbfa; border-left: 4px solid #e02229; padding: 24px; margin: 35px 0; border-radius: 0 6px 6px 0; border-top: 1px solid #e7e5e2; border-right: 1px solid #e7e5e2; border-bottom: 1px solid #e7e5e2; }
-        .highlight-box p { margin-bottom: 0; font-style: italic; color: #2c2a29; }
+        /* Information sidebar strip accent maps to Medium Shield Blue */
+        .highlight-box { background-color: #fcfbfa; border-left: 4px solid #1d428a; padding: 24px; margin: 35px 0; border-top: 1px solid #e7e5e2; border-right: 1px solid #e7e5e2; border-bottom: 1px solid #e7e5e2; border-radius: 0 4px 4px 0; }
+        .highlight-box p { margin-bottom: 0; font-style: italic; color: #202124; }
         
-        footer { margin-top: 80px; padding: 40px 20px; border-top: 1px solid #e7e5e2; display: flex; justify-content: center; gap: 40px; background-color: #ffffff; }
+        footer { margin-top: 120px; padding: 40px 20px; border-top: 1px solid #e7e5e2; display: flex; justify-content: center; gap: 40px; background-color: #ffffff; }
         footer a { color: #595551; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
-        footer a:hover { color: #e02229; text-decoration: underline; }
+        footer a:hover { color: #1d428a; text-decoration: underline; }
     </style>
 </head>
 <body>
-
     <nav>
-        <a href="index.html" class="logo">Campus Retrieve</a>
+        <a href="index.html" class="brand-container">
+            <img src="images/logo.png" alt="Campus Retrieve Shield Logo" class="nav-logo-img">
+            <span class="logo">Campus Retrieve</span>
+        </a>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="lost.html">Lost Items</a></li>
@@ -37,25 +45,21 @@
             <li><a href="about.html" class="active">About Us</a></li>
         </ul>
     </nav>
-
-    <main>
+    <header class="redwood-hero">
         <h1>About Campus Retrieve</h1>
-        
+        <p>Operational core directives and information security measures handling property recovery processes.</p>
+    </header>
+    <main>
         <p>Campus Retrieve is a dedicated platform designed to streamline the lost and found process for students, faculty, and visitors at the BYU-Idaho campus.</p>
-        
         <p>Our goal is simple: to provide a centralized, reliable method for reporting missing property and ensuring found items reach the correct administrative recovery points safely and efficiently.</p>
-
         <div class="highlight-box">
             <p>Please note: High-worth items such as wallets, phones, and official identification cards are prioritized and handled with strict validation procedures to protect student privacy and security.</p>
         </div>
-
         <p>If you have any questions, operational feedback, or need direct assistance regarding an item you have tracked, please use the Contact link below to reach our team.</p>
     </main>
-
     <footer>
         <a href="about.html">About Us</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor" target="_blank">Contact Us</a>
     </footer>
-
 </body>
 </html>
