@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Retrieve - Home</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: #ffffff; color: #3c4043; line-height: 1.6; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; border-bottom: 1px solid #e0e0e0; }
-        .logo { font-size: 1.4rem; font-weight: 500; color: #1a73e8; text-decoration: none; }
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav ul a { text-decoration: none; color: #5f6368; font-weight: 500; padding: 8px 12px; border-radius: 4px; transition: background 0.2s; }
-        nav ul a:hover, nav ul a.active { color: #1a73e8; background-color: #f1f3f4; }
-        main { max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        h1 { font-size: 2.5rem; font-weight: 400; margin-bottom: 20px; color: #202124; }
-        .subtitle { font-size: 1.2rem; color: #5f6368; margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
-        .card { background: #f8f9fa; padding: 40px 30px; border-radius: 8px; border: 1px solid #dadce0; text-align: center; }
-        .card h2 { font-size: 1.5rem; font-weight: 500; margin-bottom: 15px; color: #202124; }
-        .card p { font-size: 1rem; color: #5f6368; margin-bottom: 25px; }
-        .btn { display: inline-block; background-color: #1a73e8; color: white; text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: 500; transition: background 0.2s; }
-        .btn:hover { background-color: #1557b0; }
-        footer { margin-top: 60px; padding: 20px; border-top: 1px solid #e0e0e0; display: flex; justify-content: center; gap: 30px; }
-        footer a { color: #5f6368; text-decoration: none; font-size: 0.9rem; }
-        footer a:hover { text-decoration: underline; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: #fcfbfa; color: #2c2a29; line-height: 1.6; }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 6%; background-color: #ffffff; border-bottom: 1px solid #e7e5e2; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: #2c2a29; text-decoration: none; letter-spacing: -0.3px; }
+        nav ul { display: flex; list-style: none; gap: 8px; }
+        nav ul a { text-decoration: none; color: #595551; font-weight: 500; padding: 10px 18px; border-radius: 4px; transition: all 0.15s ease; }
+        nav ul a:hover, nav ul a.active { color: #ffffff; background-color: #e02229; }
+
+        main { max-width: 1000px; margin: 60px auto; padding: 0 30px; text-align: center; }
+        h1 { font-size: 3rem; font-weight: 400; margin-bottom: 12px; color: #1f1e1d; letter-spacing: -0.5px; }
+        .subtitle { font-size: 1.25rem; color: #595551; max-width: 650px; margin: 0 auto 50px auto; font-weight: 300; }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 50px; text-align: left; }
+        @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+        
+        .card { background: #ffffff; border-radius: 8px; border: 1px solid #e7e5e2; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: transform 0.2s ease; }
+        .card:hover { transform: translateY(-2px); }
+        .block-image { width: 100%; height: 220px; background-color: #f1efec; object-fit: cover; border-bottom: 1px solid #e7e5e2; }
+        .block-text { padding: 32px; }
+        .card h2 { font-size: 1.4rem; font-weight: 600; margin-bottom: 12px; color: #1f1e1d; }
+        .card p { font-size: 1rem; color: #595551; margin-bottom: 24px; min-height: 48px; }
+
+        .btn { display: inline-block; background-color: #e02229; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 4px; font-weight: 600; font-size: 0.95rem; transition: background 0.15s ease; border: none; cursor: pointer; }
+        .btn:hover { background-color: #b81b21; }
+
+        footer { margin-top: 100px; padding: 40px 20px; border-top: 1px solid #e7e5e2; display: flex; justify-content: center; gap: 40px; background-color: #ffffff; }
+        footer a { color: #595551; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        footer a:hover { color: #e02229; text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -45,15 +54,21 @@
 
         <div class="grid">
             <div class="card">
-                <h2>Lost Something?</h2>
-                <p>Check the inventory database or log a missing item report so we can help track it down.</p>
-                <a href="lost.html" class="btn">Find My Item</a>
+                <img src="images/home-lost.jpg" alt="Lost items visual asset" class="block-image">
+                <div class="block-text">
+                    <h2>Lost Something?</h2>
+                    <p>Check the active inventory database or log a missing item report so we can help track it down.</p>
+                    <a href="lost.html" class="btn">Find My Item</a>
+                </div>
             </div>
             
             <div class="card">
-                <h2>Found Something?</h2>
-                <p>Turn in items you've found on campus securely so they can be returned to their rightful owner.</p>
-                <a href="found.html" class="btn">Turn In Item</a>
+                <img src="images/home-found.jpg" alt="Found items visual asset" class="block-image">
+                <div class="block-text">
+                    <h2>Found Something?</h2>
+                    <p>Turn in items you've found on campus securely so they can be returned to their rightful owner.</p>
+                    <a href="found.html" class="btn">Turn In Item</a>
+                </div>
             </div>
         </div>
     </main>
