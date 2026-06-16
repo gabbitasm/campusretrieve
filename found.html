@@ -13,25 +13,25 @@
         }
 
         body {
-            background-color: #ffffff; /* Restored clean white canvas */
-            color: #3c4043;
+            background-color: #ffffff;
+            color: #2c2a29;
             line-height: 1.6;
         }
 
-        /* Original Navigation System with Redwood Spacing */
+        /* Nav Header System */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 6%;
+            padding: 16px 6%;
             background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e7e5e2;
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #002e5d; /* Restored OG Blue */
+            color: #002e5d;
             text-decoration: none;
             letter-spacing: -0.3px;
         }
@@ -39,98 +39,102 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 10px;
+            gap: 8px;
         }
 
         nav ul a {
             text-decoration: none;
-            color: #5f6368;
+            color: #595551;
             font-weight: 500;
-            padding: 10px 18px;
+            padding: 8px 16px;
             border-radius: 4px;
+            font-size: 0.95rem;
             transition: all 0.15s ease;
         }
 
-        /* Hover states use the original color profile */
         nav ul a:hover, nav ul a.active {
             color: #ffffff;
             background-color: #002e5d;
         }
 
-        /* Redwood Hero Layout Section */
-        main {
-            max-width: 950px;
-            margin: 60px auto;
-            padding: 0 30px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 400;
-            margin-bottom: 12px;
-            color: #202124;
-            letter-spacing: -0.5px;
-        }
-        
-        .page-description {
-            color: #5f6368;
-            margin-bottom: 50px;
-            font-size: 1.15rem;
-            font-weight: 300;
-        }
-
-        /* Flat Structural Layout Blocks */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 35px;
-            margin-bottom: 50px;
+        /* 1. THE REDWOOD HERO CANVAS */
+        .redwood-hero {
+            background-color: #fcfbfa; /* Structural dual-tone contrast element */
+            border-bottom: 1px solid #e7e5e2;
+            padding: 60px 6%;
             text-align: left;
         }
 
-        @media (max-width: 700px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
+        .redwood-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 300; /* Redwood signature light-weight variant headers */
+            color: #1f1e1d;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
         }
 
-        .card {
+        .redwood-hero p {
+            font-size: 1.2rem;
+            color: #595551;
+            max-width: 700px;
+            font-weight: 300;
+        }
+
+        /* 2. THE WORKING WORKSPACE SURFACE */
+        .workspace {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 4%;
+        }
+
+        /* 3. HORIZONTAL STRUCTURED STRIPS (NOT BOXES) */
+        .redwood-strip {
+            display: flex;
             background: #ffffff;
+            border: 1px solid #e7e5e2;
             border-radius: 6px;
-            border: 1px solid #e0e0e0; /* Flat structural boundaries */
+            margin-bottom: 24px;
             overflow: hidden;
             transition: border-color 0.15s ease;
         }
-        
-        .card:hover {
-            border-color: #002e5d; /* Subtle feedback using original theme color */
+
+        @media (max-width: 750px) {
+            .redwood-strip {
+                flex-direction: column;
+            }
+            .strip-image {
+                width: 100% !important;
+                height: 180px !important;
+            }
         }
 
-        .block-image {
-            width: 100%;
-            height: 220px;
-            background-color: #f5f5f5;
+        .strip-image {
+            width: 300px;
+            height: 100%;
+            min-height: 180px;
+            background-color: #f1efec;
             object-fit: cover;
-            border-bottom: 1px solid #e0e0e0;
         }
 
-        .block-text {
-            padding: 30px;
+        .strip-content {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .card h2 {
-            font-size: 1.35rem;
+        .strip-content h2 {
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 10px;
-            color: #202124;
+            color: #1f1e1d;
+            margin-bottom: 8px;
         }
 
-        .card p {
+        .strip-content p {
             font-size: 1rem;
-            color: #5f6368;
+            color: #595551;
         }
-        
+
         .subtext-italic {
             font-style: italic;
             color: #8c857f;
@@ -138,18 +142,20 @@
             margin-top: 6px;
         }
 
-        /* Redwood Primary Focus Action Zone */
-        .action-zone {
+        /* Centered Focus Action Bar */
+        .action-bar {
+            text-align: center;
+            margin-top: 50px;
             padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid #e7e5e2;
         }
 
         .btn {
             display: inline-block;
-            background-color: #002e5d; /* Restored OG Blue for primary action button */
+            background-color: #002e5d;
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 36px;
+            padding: 14px 40px;
             border-radius: 4px;
             font-weight: 600;
             font-size: 1rem;
@@ -161,9 +167,9 @@
         }
 
         footer {
-            margin-top: 100px;
+            margin-top: 120px;
             padding: 40px 20px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid #e7e5e2;
             display: flex;
             justify-content: center;
             gap: 40px;
@@ -171,7 +177,7 @@
         }
 
         footer a {
-            color: #5f6368;
+            color: #595551;
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
@@ -195,31 +201,32 @@
         </ul>
     </nav>
 
-    <main>
+    <header class="redwood-hero">
         <h1>Lost Items Turn In</h1>
-        <p class="page-description">Log found assets to match them with missing student reports.</p>
+        <p>Log discovered assets to systematically cross-reference and match them with active student missing property records.</p>
+    </header>
 
-        <div class="grid">
-            <div class="card">
-                <img src="images/high-worth.jpg" alt="High worth asset check-in visual" class="block-image">
-                <div class="block-text">
-                    <h2>Found Something of High Worth?</h2>
-                    <p>Items like electronics, wallets, or keys need immediate check-in.</p>
-                    <p class="subtext-italic">(You didn't steal it... right?)</p>
-                </div>
+    <main class="workspace">
+        
+        <section class="redwood-strip">
+            <img src="images/high-worth.jpg" alt="High worth tracking asset" class="strip-image">
+            <div class="strip-content">
+                <h2>Found Something of High Worth?</h2>
+                <p>Items containing identifiable data, credentials, or significant market value demand immediate drop-box storage containment pipelines.</p>
+                <p class="subtext-italic">(You didn't steal it... right?)</p>
             </div>
-            
-            <div class="card">
-                <img src="images/general-lost.jpg" alt="Missing property registration visual" class="block-image">
-                <div class="block-text">
-                    <h2>Looking For Something You Lost?</h2>
-                    <p>Check the active registration logs to see if your property was turned in.</p>
-                    <p class="subtext-italic">(It is yours.... right?)</p>
-                </div>
-            </div>
-        </div>
+        </section>
 
-        <div class="action-zone">
+        <section class="redwood-strip">
+            <img src="images/general-lost.jpg" alt="Missing property registration asset" class="strip-image">
+            <div class="strip-content">
+                <h2>Looking For Something You Lost?</h2>
+                <p>Run immediate validation structural searches on verified item databases to cross-check recovery timestamps.</p>
+                <p class="subtext-italic">(It is yours.... right?)</p>
+            </div>
+        </section>
+
+        <div class="action-bar">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAUht6KTdzxdZXJQf6dAhmMlBjLEW2N4ylOFwXFhgBEFIlPw/viewform?usp=publish-editor" class="btn" target="_blank">
                 Found Item Returns
             </a>
