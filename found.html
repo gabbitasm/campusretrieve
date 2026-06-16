@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Retrieve</title>
+    <title>Campus Retrieve - Found Items</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,142 +13,178 @@
         }
 
         body {
-            background-color: #ffffff;
+            background-color: #f4f6f9; /* Soft background to mimic the original site depth */
             color: #3c4043;
             line-height: 1.6;
         }
 
-        /* Navigation Bar */
+        /* Upgraded Header / Nav Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 18px 5%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .logo {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: #1a73e8;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #002e5d; /* BYU-I Blue accent preference */
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 15px;
         }
 
         nav ul a {
             text-decoration: none;
             color: #5f6368;
             font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: background 0.2s;
+            padding: 10px 16px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
 
         nav ul a:hover, nav ul a.active {
-            color: #1a73e8;
-            background-color: #f1f3f4;
+            color: #ffffff;
+            background-color: #002e5d;
         }
 
-        /* Main Content Container */
+        /* Content Hero Wrapper */
         main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-bottom: 40px;
+            font-size: 2.6rem;
+            font-weight: 600;
+            margin-bottom: 10px;
             color: #202124;
         }
-
-        /* Grid section for the options */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        
+        .page-description {
+            color: #666;
             margin-bottom: 40px;
+            font-size: 1.1rem;
         }
 
-        @media (max-width: 600px) {
-            .grid {
+        /* Two-Column split with Image Capability */
+        .content-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        @media (max-width: 650px) {
+            .content-split {
                 grid-template-columns: 1fr;
             }
         }
 
-        .card {
-            background: #f8f9fa;
-            padding: 30px;
+        .feature-block {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            border: 1px solid #dadce0;
+            overflow: hidden; /* Keeps image corners rounded inside block */
+            transition: transform 0.2s;
+        }
+        
+        .feature-block:hover {
+            transform: translateY(-2px);
         }
 
-        .card h3 {
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: #202124;
+        /* Image Placeholder Box */
+        .block-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eaeaea; /* Fallback gray if image fails to load */
+            object-fit: cover; /* Crops image cleanly without distorting aspect ratio */
         }
 
-        .card p {
-            font-size: 0.9rem;
-            color: #70757a;
+        .block-text {
+            padding: 24px;
+        }
+
+        .block-text h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #002e5d;
+        }
+
+        .block-text p {
+            font-size: 0.95rem;
+            color: #5f6368;
+        }
+        
+        .subtext-italic {
             font-style: italic;
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 5px;
         }
 
-        /* Action Button */
-        .btn-container {
-            margin-top: 20px;
+        /* Prominent Centered Call to Action */
+        .action-zone {
+            padding: 30px 0;
+            border-top: 1px solid #eee;
         }
 
         .btn {
             display: inline-block;
-            background-color: #1a73e8;
+            background-color: #002e5d;
             color: white;
             text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: 500;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            transition: all 0.2s;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s, cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .btn:hover {
-            background-color: #1557b0;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            background-color: #001f40;
         }
 
-        /* Footer Links */
         footer {
-            margin-top: 60px;
-            padding: 20px;
+            margin-top: 80px;
+            padding: 30px;
             border-top: 1px solid #e0e0e0;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
+            background-color: #ffffff;
         }
 
         footer a {
             color: #5f6368;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         footer a:hover {
+            color: #002e5d;
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
         <a href="index.html" class="logo">Campus Retrieve</a>
         <ul>
@@ -161,20 +197,32 @@
 
     <main>
         <h1>Lost Items Turn In</h1>
+        <p class="page-description">Log found assets to match them with missing student reports.</p>
 
-        <div class="grid">
-            <div class="card">
-                <h3>Found Something of High Worth?</h3>
-                <p>(You didn't steal it... right?)</p>
+        <div class="content-split">
+            <!-- Card 1 -->
+            <div class="feature-block">
+                <!-- Swap the 'src' path out with your actual image path when ready -->
+                <img src="images/high-worth.jpg" alt="High worth items placeholder" class="block-image">
+                <div class="block-text">
+                    <h3>Found Something of High Worth?</h3>
+                    <p>Items like electronics, wallets, or keys need immediate check-in.</p>
+                    <p class="subtext-italic">(You didn't steal it... right?)</p>
+                </div>
             </div>
             
-            <div class="card">
-                <h3>Looking For Something You Lost?</h3>
-                <p>(It is yours.... right?)</p>
+            <!-- Card 2 -->
+            <div class="feature-block">
+                <img src="images/general-lost.jpg" alt="Lost items cabinet placeholder" class="block-image">
+                <div class="block-text">
+                    <h3>Looking For Something You Lost?</h3>
+                    <p>Check the active registration logs to see if your property was turned in.</p>
+                    <p class="subtext-italic">(It is yours.... right?)</p>
+                </div>
             </div>
         </div>
 
-        <div class="btn-container">
+        <div class="action-zone">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAUht6KTdzxdZXJQf6dAhmMlBjLEW2N4ylOFwXFhgBEFIlPw/viewform?usp=publish-editor" class="btn" target="_blank">
                 Found Item Returns
             </a>
@@ -182,7 +230,7 @@
     </main>
 
     <footer>
-        <a href="#">About Us</a>
+        <a href="about.html">About Us</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor" target="_blank">Contact Us</a>
     </footer>
 
