@@ -3,11 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Site</title>
+    <title>Campus Retrieve</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #3c4043;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: #5f6368;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        nav ul a:hover, nav ul a.active {
+            color: #1a73e8;
+            background-color: #f1f3f4;
+        }
+
+        /* Main Content Container */
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: #202124;
+        }
+
+        /* Grid section for the options */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #dadce0;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #202124;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #70757a;
+            font-style: italic;
+        }
+
+        /* Action Button */
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #1557b0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+
+        /* Footer Links */
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        footer a {
+            color: #5f6368;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Campus Retrieve</h1>
-    <h4>So you lost something important to you, huh?</h4>
-    <p>You really screwed up this time, buddy.</p>
+
+    <nav>
+        <a href="#" class="logo">Campus Retrieve</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Lost Items</a></li>
+            <li><a href="#" class="active">Found Items</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Lost Items Turn In</h1>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Found Something of High Worth?</h3>
+                <p>(You didn't steal it... right?)</p>
+            </div>
+            
+            <div class="card">
+                <h3>Looking For Something You Lost?</h3>
+                <p>(It is yours.... right?)</p>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAUht6KTdzxdZXJQf6dAhmMlBjLEW2N4ylOFwXFhgBEFIlPw/viewform?usp=publish-editor" class="btn" target="_blank">
+                Found Item Returns
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#">About Us</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor" target="_blank">Contact Us</a>
+    </footer>
+
 </body>
 </html>
