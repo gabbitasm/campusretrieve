@@ -1,86 +1,313 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Campus Retrieve - Home</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: #ffffff; color: #2c2a29; line-height: 1.6; }
-        
-        /* Updated Navigation header with exact Logo colors */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 6%; background-color: #072146; border-bottom: 3px solid #1d428a; }
-        
-        .brand-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo-img { height: 40px; width: auto; object-fit: contain; }
-        .logo { font-size: 1.3rem; font-weight: 700; color: #ffffff; letter-spacing: -0.3px; }
-        
-        nav ul { display: flex; list-style: none; gap: 8px; }
-        nav ul a { text-decoration: none; color: #e2e8f0; font-weight: 500; padding: 8px 16px; border-radius: 4px; font-size: 0.95rem; transition: all 0.15s ease; }
-        nav ul a:hover, nav ul a.active { color: #072146; background-color: #ffffff; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+          sans-serif;
+      }
+      body {
+        background-color: #ffffff;
+        color: #2c2a29;
+        line-height: 1.6;
+      }
 
-        /* Redwood Hero Canvas Split */
-        .redwood-hero { background-color: #fcfbfa; border-bottom: 1px solid #e7e5e2; padding: 60px 6%; text-align: left; }
-        .redwood-hero h1 { font-size: 2.8rem; font-weight: 300; color: #072146; letter-spacing: -0.5px; margin-bottom: 8px; }
-        .redwood-hero p { font-size: 1.2rem; color: #595551; max-width: 700px; font-weight: 300; }
+      /* Updated Navigation header with exact Logo colors */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 6%;
+        background-color: #072146;
+        border-bottom: 3px solid #1d428a;
+      }
 
-        /* Workspace Surfaces */
-        .workspace { max-width: 1100px; margin: 50px auto; padding: 0 4%; }
-        .redwood-strip { display: flex; background: #ffffff; border: 1px solid #e7e5e2; border-radius: 6px; margin-bottom: 24px; overflow: hidden; transition: border-color 0.15s ease; }
-        .redwood-strip:hover { border-color: #1d428a; }
-        @media (max-width: 750px) { .redwood-strip { flex-direction: column; } .strip-image { width: 100% !important; height: 180px !important; } }
-        .strip-image { width: 300px; height: 100%; min-height: 180px; background-color: #f1efec; object-fit: cover; }
-        .strip-content { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
-        .strip-content h2 { font-size: 1.4rem; font-weight: 600; color: #072146; margin-bottom: 8px; }
-        .strip-content p { font-size: 1rem; color: #595551; margin-bottom: 15px; }
+      .brand-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      .nav-logo-img {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+      }
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.3px;
+      }
 
-        /* Muted inline utility route triggers */
-        .btn-inline { display: inline-block; align-self: flex-start; background-color: #ffffff; color: #1d428a; text-decoration: none; padding: 8px 20px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; transition: all 0.15s ease; border: 1px solid #cbd5e1; }
-        .btn-inline:hover { background-color: #f8fafc; border-color: #1d428a; }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 8px;
+      }
+      nav ul a {
+        text-decoration: none;
+        color: #e2e8f0;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        transition: all 0.15s ease;
+      }
+      nav ul a:hover,
+      nav ul a.active {
+        color: #072146;
+        background-color: #ffffff;
+      }
 
-        footer { margin-top: 120px; padding: 40px 20px; border-top: 1px solid #e7e5e2; display: flex; justify-content: center; gap: 40px; background-color: #ffffff; }
-        footer a { color: #595551; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
-        footer a:hover { color: #1d428a; text-decoration: underline; }
+      /* Redwood Hero Canvas Split */
+      .redwood-hero {
+        background-color: #fcfbfa;
+        border-bottom: 1px solid #e7e5e2;
+        padding: 60px 6%;
+        text-align: left;
+      }
+      .redwood-hero h1 {
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: #072146;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+      }
+      .redwood-hero p {
+        font-size: 1.2rem;
+        color: #595551;
+        max-width: 700px;
+        font-weight: 300;
+      }
+
+      /* Workspace Surfaces */
+      .workspace {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 0 4%;
+      }
+      .redwood-strip {
+        display: flex;
+        background: #ffffff;
+        border: 1px solid #e7e5e2;
+        border-radius: 6px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        transition: border-color 0.15s ease;
+      }
+      .redwood-strip:hover {
+        border-color: #1d428a;
+      }
+      @media (max-width: 750px) {
+        .redwood-strip {
+          flex-direction: column;
+        }
+        .strip-image {
+          width: 100% !important;
+          height: 180px !important;
+        }
+      }
+      .strip-image {
+        width: 300px;
+        height: 100%;
+        min-height: 180px;
+        background-color: #f1efec;
+        object-fit: cover;
+      }
+      .strip-content {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .strip-content h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #072146;
+        margin-bottom: 8px;
+      }
+      .strip-content p {
+        font-size: 1rem;
+        color: #595551;
+        margin-bottom: 15px;
+      }
+
+      /* Muted inline utility route triggers */
+      .btn-inline {
+        display: inline-block;
+        align-self: flex-start;
+        background-color: #ffffff;
+        color: #1d428a;
+        text-decoration: none;
+        padding: 8px 20px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.15s ease;
+        border: 1px solid #cbd5e1;
+      }
+      .btn-inline:hover {
+        background-color: #f8fafc;
+        border-color: #1d428a;
+      }
+
+      footer {
+        margin-top: 120px;
+        padding: 40px 20px;
+        border-top: 1px solid #e7e5e2;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        background-color: #ffffff;
+      }
+      footer a {
+        color: #595551;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+      footer a:hover {
+        color: #1d428a;
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <a href="index.html" class="brand-container">
-            <img src="images/logo.png" alt="Campus Retrieve Shield Logo" class="nav-logo-img">
-            <span class="logo">Campus Retrieve</span>
-        </a>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="lost.html">Lost Items</a></li>
-            <li><a href="found.html">Found Items</a></li>
-            <li><a href="about.html">About Us</a></li>
-        </ul>
+      <a href="index.html" class="brand-container">
+        <img
+          src="images/logo.png"
+          alt="Campus Retrieve Shield Logo"
+          class="nav-logo-img"
+        />
+        <span class="logo">Campus Retrieve</span>
+      </a>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="lost.html">Lost Items</a></li>
+        <li><a href="found.html">Found Items</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
     </nav>
     <header class="redwood-hero">
-        <h1>Campus Retrieve</h1>
-        <p>The centralized framework for modern administrative tracking and asset resolution at BYU-Idaho.</p>
+      <img src="images/home_page.png" alt="Home Page" class="header-img"/>
+      <h1>Campus Retrieve</h1>
+      <p>
+        Campus Retrieve bridges the gap between what's missing and what's
+        possible — leveraging technology to reunite people with their belongings
+        while creating community through weekly reward-driven experiences.
+      </p>
     </header>
     <main class="workspace">
-        <section class="redwood-strip">
-            <img src="images/home-lost.jpg" alt="Lost asset track layout" class="strip-image">
-            <div class="strip-content">
-                <h2>Lost Something?</h2>
-                <p>Query open inventory data paths or securely register an active missing item profile with our intake handlers.</p>
-                <a href="lost.html" class="btn-inline">Find My Item</a>
-            </div>
-        </section>
-        <section class="redwood-strip">
-            <img src="images/home-found.jpg" alt="Found asset log layout" class="strip-image">
-            <div class="strip-content">
-                <h2>Found Something?</h2>
-                <p>Turn in discovered property to systematic repository networks across campus for immediate reconciliation.</p>
-                <a href="found.html" class="btn-inline">Turn In Item</a>
-            </div>
-        </section>
+      <section class="redwood-strip">
+        <img
+          src="images/robber.webp"
+          alt="Lost asset track layout"
+          class="strip-image"
+        />
+        <div class="strip-content">
+          <h2>Lost Something Important?</h2>
+
+          <a href="lost.html" class="btn-inline">Find My Item</a>
+        </div>
+      </section>
+      <section class="redwood-strip">
+        <img
+          src="images/fortnite.jpeg"
+          alt="Found asset log layout"
+          class="strip-image"
+        />
+        <div class="strip-content">
+          <h2>Found Something That Isn't Yours?</h2>
+
+          <a href="found.html" class="btn-inline">Turn In Item</a>
+        </div>
+      </section>
+      <section class="redwood-strip">
+        <img
+          src="images/clown-cat.jpeg"
+          alt="Found asset log layout"
+          class="strip-image"
+        />
+        <div class="strip-content">
+          <h2>Looking For Weekly Giveaways?</h2>
+          <a href="found.html" class="btn-inline">Weekly Giveaways</a>
+        </div>
+      </section>
+      <section>
+        <h1>Recently Found Items</h1>
+        <img src="images/monkey.jpeg" alt="golden monkey" />
+      </section>
+      <section>
+        <h1>Recently Lost Items</h1>
+        <img src="images/baby.jpeg" alt="angry baby" />
+      </section>
+      <section class="redwood-hero">
+        <h1>Retrieval Policy</h1>
+        <p>
+          Our ultimate goal is to reunite you with your long-lost property as
+          quickly and safely as possible—balancing ironclad campus security with
+          standard student convenience. However, because our public website
+          essentially lets the entire internet browse the digital graveyard of
+          your lost things, we can't just hand out MacBooks to anyone with a
+          convincing sad face, meaning you’ll have to survive our verification
+          gauntlet first. To successfully unlock your property from our custody,
+          you must provide distinctive details not visible online—like a
+          specific scratch, a quirky anime keychain, or the exact, deeply
+          embarrassing contents of your backpack—and if you are claiming an
+          electronic device, you must successfully unlock it via password or
+          biometrics right in front of our unimpressionable staff. To finalize
+          the rescue mission, you’ll need to flash your official Student ID
+          Card, though if you managed to lose that too, a government photo ID
+          paired with digital proof of enrollment from your student portal will
+          suffice. If you are stuck in a brutal three-hour lab or are too sick
+          to move, you can send a trusted proxy, provided you email us from your
+          official student account with their full name ahead of time; your
+          designated minion must then show their own Student ID and assume full,
+          terrifying financial and social responsibility for your item the
+          moment it hits their hands. <br /><br />
+
+          Please keep in mind that space is a premium commodity, and because we
+          are running a capitalist thunderdome and not your personal storage
+          locker, your abandoned items are on a strict doomsday clock heading
+          straight for the campus auction block. Absolutely nothing escapes the
+          gavel. Perishable goods, unwashed gym gear, and open liquids will be
+          auctioned off within 24 hours to the bravest, most iron-stomached
+          bidder before they become a biohazard. Standard items like textbooks,
+          keys, backpacks, and clothing get 30 days before hitting the stage,
+          while high-value treasures get a 60-day grace period. Yes, this
+          includes your laptops, smartphones, wallets, cash, and even your
+          official state or federal documents—all sold as-is to the highest
+          bidder. And no, we will not be wiping any hard drives or deleting any
+          data, so if you don't claim your laptop in time, the highest bidder
+          inherits your entire digital life, your unfinished essays, and your
+          bizarre search history. All auction proceeds and unclaimed cash are
+          funneled directly into student scholarship funds, so thank you for
+          funding someone's education with your carelessness. Ultimately, our
+          staff reserves the absolute right to deny the return of any item if
+          your story feels a bit too fictional, and intentionally trying to
+          claim property that doesn’t belong to you explicitly violates the
+          Student Code of Conduct—meaning we will report you to the Dean faster
+          than you can say "going once, going twice, sold!"
+        </p>
+      </section>
     </main>
     <footer>
-        <a href="about.html">About Us</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor" target="_blank">Contact Us</a>
+      <a href="about.html">About Us</a>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor"
+        target="_blank"
+        >Contact Us</a
+      >
     </footer>
-</body>
+  </body>
 </html>

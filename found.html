@@ -1,87 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Campus Retrieve - Found Items</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: #ffffff; color: #2c2a29; line-height: 1.6; }
-        
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 6%; background-color: #072146; border-bottom: 3px solid #1d428a; }
-        .brand-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo-img { height: 40px; width: auto; object-fit: contain; }
-        .logo { font-size: 1.3rem; font-weight: 700; color: #ffffff; letter-spacing: -0.3px; }
-        nav ul { display: flex; list-style: none; gap: 8px; }
-        nav ul a { text-decoration: none; color: #e2e8f0; font-weight: 500; padding: 8px 16px; border-radius: 4px; font-size: 0.95rem; transition: all 0.15s ease; }
-        nav ul a:hover, nav ul a.active { color: #072146; background-color: #ffffff; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+          sans-serif;
+      }
+      body {
+        background-color: #ffffff;
+        color: #2c2a29;
+        line-height: 1.6;
+      }
 
-        .redwood-hero { background-color: #fcfbfa; border-bottom: 1px solid #e7e5e2; padding: 60px 6%; text-align: left; }
-        .redwood-hero h1 { font-size: 2.8rem; font-weight: 300; color: #072146; letter-spacing: -0.5px; margin-bottom: 8px; }
-        .redwood-hero p { font-size: 1.2rem; color: #595551; max-width: 700px; font-weight: 300; }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 6%;
+        background-color: #072146;
+        border-bottom: 3px solid #1d428a;
+      }
+      .brand-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      .nav-logo-img {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+      }
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.3px;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 8px;
+      }
+      nav ul a {
+        text-decoration: none;
+        color: #e2e8f0;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        transition: all 0.15s ease;
+      }
+      nav ul a:hover,
+      nav ul a.active {
+        color: #072146;
+        background-color: #ffffff;
+      }
 
-        .workspace { max-width: 1100px; margin: 50px auto; padding: 0 4%; }
-        .redwood-strip { display: flex; background: #ffffff; border: 1px solid #e7e5e2; border-radius: 6px; margin-bottom: 24px; overflow: hidden; transition: border-color 0.15s ease; }
-        .redwood-strip:hover { border-color: #1d428a; }
-        @media (max-width: 750px) { .redwood-strip { flex-direction: column; } .strip-image { width: 100% !important; height: 180px !important; } }
-        .strip-image { width: 300px; height: 100%; min-height: 180px; background-color: #f1efec; object-fit: cover; }
-        .strip-content { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
-        .strip-content h2 { font-size: 1.4rem; font-weight: 600; color: #072146; margin-bottom: 8px; }
-        .strip-content p { font-size: 1rem; color: #595551; }
-        .subtext-italic { font-style: italic; color: #8c857f; font-size: 0.9rem; margin-top: 6px; }
+      .redwood-hero {
+        background-color: #fcfbfa;
+        border-bottom: 1px solid #e7e5e2;
+        padding: 60px 6%;
+        text-align: left;
+      }
+      .redwood-hero h1 {
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: #072146;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+      }
+      .redwood-hero p {
+        font-size: 1.2rem;
+        color: #595551;
+        max-width: 700px;
+        font-weight: 300;
+      }
 
-        .action-bar { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #e7e5e2; }
-        .btn-accent { display: inline-block; background-color: #14b8a6; color: #ffffff; text-decoration: none; padding: 14px 40px; border-radius: 4px; font-weight: 600; font-size: 1rem; transition: background 0.15s ease; box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2); }
-        .btn-accent:hover { background-color: #0d9488; }
+      .workspace {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 0 4%;
+      }
+      .redwood-strip {
+        display: flex;
+        background: #ffffff;
+        border: 1px solid #e7e5e2;
+        border-radius: 6px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        transition: border-color 0.15s ease;
+      }
+      .redwood-strip:hover {
+        border-color: #1d428a;
+      }
+      @media (max-width: 750px) {
+        .redwood-strip {
+          flex-direction: column;
+        }
+        .strip-image {
+          width: 100% !important;
+          height: 180px !important;
+        }
+      }
+      .strip-image {
+        width: 300px;
+        height: 100%;
+        min-height: 180px;
+        background-color: #f1efec;
+        object-fit: cover;
+      }
+      .strip-content {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .strip-content h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #072146;
+        margin-bottom: 8px;
+      }
+      .strip-content p {
+        font-size: 1rem;
+        color: #595551;
+      }
+      .subtext-italic {
+        font-style: italic;
+        color: #8c857f;
+        font-size: 0.9rem;
+        margin-top: 6px;
+      }
 
-        footer { margin-top: 120px; padding: 40px 20px; border-top: 1px solid #e7e5e2; display: flex; justify-content: center; gap: 40px; background-color: #ffffff; }
-        footer a { color: #595551; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
-        footer a:hover { color: #1d428a; text-decoration: underline; }
+      .action-bar {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #e7e5e2;
+      }
+      .btn-accent {
+        display: inline-block;
+        background-color: #14b8a6;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 14px 40px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: background 0.15s ease;
+        box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+      }
+      .btn-accent:hover {
+        background-color: #0d9488;
+      }
+
+      footer {
+        margin-top: 120px;
+        padding: 40px 20px;
+        border-top: 1px solid #e7e5e2;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        background-color: #ffffff;
+      }
+      footer a {
+        color: #595551;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+      footer a:hover {
+        color: #1d428a;
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <a href="index.html" class="brand-container">
-            <img src="images/logo.png" alt="Campus Retrieve Shield Logo" class="nav-logo-img">
-            <span class="logo">Campus Retrieve</span>
-        </a>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lost.html">Lost Items</a></li>
-            <li><a href="found.html" class="active">Found Items</a></li>
-            <li><a href="about.html">About Us</a></li>
-        </ul>
+      <a href="index.html" class="brand-container">
+        <img
+          src="images/logo.png"
+          alt="Campus Retrieve Shield Logo"
+          class="nav-logo-img"
+        />
+        <span class="logo">Campus Retrieve</span>
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lost.html">Lost Items</a></li>
+        <li><a href="found.html" class="active">Found Items</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
     </nav>
     <header class="redwood-hero">
-        <h1>Lost Items Turn In</h1>
-        <p>Log discovered assets to systematically cross-reference and match them with active student missing property records.</p>
+      <img
+        src="images/found-items.png"
+        alt="Found Items Page"
+        class="header-img"
+      />
+      <h1>Lost Items Turn In</h1>
+      <p>
+        Log discovered assets to systematically cross-reference and match them
+        with active student missing property records.
+      </p>
     </header>
     <main class="workspace">
-        <section class="redwood-strip">
-            <img src="images/high-worth.jpg" alt="High worth pipeline block" class="strip-image">
-            <div class="strip-content">
-                <h2>Found Something of High Worth?</h2>
-                <p>Items containing identifiable data, credentials, or significant market value demand immediate drop-box storage containment pipelines.</p>
-                <p class="subtext-italic">(You didn't steal it... right?)</p>
-            </div>
-        </section>
-        <section class="redwood-strip">
-            <img src="images/general-lost.jpg" alt="Database confirmation loop asset" class="strip-image">
-            <div class="strip-content">
-                <h2>Looking For Something You Lost?</h2>
-                <p>Run immediate validation structural searches on verified item databases to cross-check recovery timestamps.</p>
-                <p class="subtext-italic">(It is yours.... right?)</p>
-            </div>
-        </section>
-        <div class="action-bar">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAUht6KTdzxdZXJQf6dAhmMlBjLEW2N4ylOFwXFhgBEFIlPw/viewform?usp=publish-editor" class="btn-accent" target="_blank">
-                Found Item Returns
-            </a>
+      <section class="redwood-strip">
+        <img
+          src="images/high-worth.jpg"
+          alt="High worth pipeline block"
+          class="strip-image"
+        />
+        <div class="strip-content">
+          <h2>Found Something of High Worth?</h2>
+          <p>
+            Items containing identifiable data, credentials, or significant
+            market value demand immediate drop-box storage containment
+            pipelines.
+          </p>
+          <p class="subtext-italic">(You didn't steal it... right?)</p>
         </div>
+      </section>
+      <section class="redwood-strip">
+        <img
+          src="images/general-lost.jpg"
+          alt="Database confirmation loop asset"
+          class="strip-image"
+        />
+        <div class="strip-content">
+          <h2>Looking For Something You Lost?</h2>
+          <p>
+            Run immediate validation structural searches on verified item
+            databases to cross-check recovery timestamps.
+          </p>
+          <p class="subtext-italic">(It is yours.... right?)</p>
+        </div>
+      </section>
+      <div class="action-bar">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeAUht6KTdzxdZXJQf6dAhmMlBjLEW2N4ylOFwXFhgBEFIlPw/viewform?usp=publish-editor"
+          class="btn-accent"
+          target="_blank"
+        >
+          Found Item Returns
+        </a>
+      </div>
     </main>
     <footer>
-        <a href="about.html">About Us</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor" target="_blank">Contact Us</a>
+      <a href="about.html">About Us</a>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor"
+        target="_blank"
+        >Contact Us</a
+      >
     </footer>
-</body>
+  </body>
 </html>
