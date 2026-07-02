@@ -1,3 +1,12 @@
+/* Here will be our css lmao */
+.header-img {
+  width: 115%;
+  margin-top: -60px;
+  margin-left: -100px;
+}
+/* ==========================================================================
+   1. Core Reset & Base Styles
+   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,12 +14,21 @@
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
+}
+
 body {
   background-color: #ffffff;
   color: #2c2a29;
   line-height: 1.6;
 }
 
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   2. Navigation Header
+   ========================================================================== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -19,28 +37,33 @@ nav {
   background-color: #072146;
   border-bottom: 3px solid #1d428a;
 }
+
 .brand-container {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
 }
+
 .nav-logo-img {
   height: 40px;
   width: auto;
   object-fit: contain;
 }
+
 .logo {
   font-size: 1.3rem;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.3px;
 }
+
 nav ul {
   display: flex;
   list-style: none;
   gap: 8px;
 }
+
 nav ul a {
   text-decoration: none;
   color: #e2e8f0;
@@ -50,6 +73,7 @@ nav ul a {
   font-size: 0.95rem;
   transition: all 0.15s ease;
 }
+
 nav ul a:hover,
 nav ul a.active {
   color: #072146;
@@ -62,6 +86,16 @@ nav ul a.active {
   padding: 60px 6%;
   text-align: left;
 }
+/* ==========================================================================
+   3. Hero Section
+   ========================================================================== */
+.redwood-hero {
+  background-color: #fcfbfa;
+  border-bottom: 1px solid #e7e5e2;
+  padding: 60px 6% 0 60px;
+  text-align: left;
+}
+
 .redwood-hero h1 {
   font-size: 2.8rem;
   font-weight: 300;
@@ -83,6 +117,52 @@ nav ul a.active {
 }
 .redwood-strip {
   display: flex;
+
+.redwood-hero p {
+  font-size: 1.6rem;
+  color: #595551;
+  width: 100%;
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   4. Layout Containers & Global Elements
+   ========================================================================== */
+main {
+  margin: 50px auto;
+  padding: 0 6%;
+  text-align: left;
+}
+
+#lost_found_weekly {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+#found_lost {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.workspace {
+  margin: 50px;
+  padding: 0 4%;
+}
+
+p {
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+  color: #595551;
+}
+
+/* ==========================================================================
+   5. Components & Cards
+   ========================================================================== */
+/* Strip Card Layout */
+.redwood-strip {
+  width: 400px;
   background: #ffffff;
   border: 1px solid #e7e5e2;
   border-radius: 6px;
@@ -105,16 +185,30 @@ nav ul a.active {
 .strip-image {
   width: 300px;
   height: 100%;
+  gap: 24px;
+  height: 600px;
+}
+
+.redwood-strip:hover {
+  border-color: #1d428a;
+}
+
+.strip-image {
+  width: 400px;
+  height: 400px;
   min-height: 180px;
   background-color: #f1efec;
   object-fit: cover;
 }
+
 .strip-content {
   padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+}
+
 .strip-content h2 {
   font-size: 1.4rem;
   font-weight: 600;
@@ -125,6 +219,22 @@ nav ul a.active {
   font-size: 1rem;
   color: #595551;
 }
+
+.strip-content p {
+  font-size: 1rem;
+  color: #595551;
+  margin-bottom: 15px;
+}
+
+#found_lost img {
+  width: 600px;
+  height: 600px;
+}
+
+#found_lost h1 {
+  text-align: center;
+}
+/* Typography Helpers */
 .subtext-italic {
   font-style: italic;
   color: #8c857f;
@@ -132,12 +242,55 @@ nav ul a.active {
   margin-top: 6px;
 }
 
+/* Highlight Box Component */
+.highlight-box {
+  background-color: #fcfbfa;
+  border-left: 4px solid #1d428a;
+  padding: 24px;
+  margin: 35px 0;
+  border-top: 1px solid #e7e5e2;
+  border-right: 1px solid #e7e5e2;
+  border-bottom: 1px solid #e7e5e2;
+  border-radius: 0 4px 4px 0;
+}
+
+.highlight-box p {
+  margin-bottom: 0;
+  font-style: italic;
+  color: #202124;
+}
+
+/* ==========================================================================
+   6. Buttons & Calls to Action
+   ========================================================================== */
+/* Inline Button */
+.btn-inline {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: #1d428a;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-inline:hover {
+  background-color: #f8fafc;
+  border-color: #1d428a;
+}
+
+/* Accent Action Bar & Button */
 .action-bar {
   text-align: center;
   margin-top: 50px;
   padding-top: 30px;
   border-top: 1px solid #e7e5e2;
 }
+
 .btn-accent {
   display: inline-block;
   background-color: #14b8a6;
@@ -150,10 +303,14 @@ nav ul a.active {
   transition: background 0.15s ease;
   box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
 }
+
 .btn-accent:hover {
   background-color: #0d9488;
 }
 
+/* ==========================================================================
+   7. Footer
+   ========================================================================== */
 footer {
   margin-top: 120px;
   padding: 40px 20px;
@@ -163,13 +320,118 @@ footer {
   gap: 40px;
   background-color: #ffffff;
 }
+
 footer a {
   color: #595551;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
 }
+
 footer a:hover {
   color: #1d428a;
   text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. Media Queries
+   ========================================================================== */
+@media (max-width: 750px) {
+  .redwood-strip {
+    flex-direction: column;
+  }
+  .strip-image {
+    width: 100% !important;
+    height: 180px !important;
+  }
+}
+
+/* ==========================================================================
+   1. Core Layout & Container
+   ========================================================================== */
+.carousel-container {
+  position: relative;
+  max-width: 600px; /* Limits maximum width of the carousels */
+  margin: 20px auto; /* Centers the carousel horizontally on your page */
+  overflow: hidden;
+  border-radius: 8px; /* Softens corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow */
+  height: 500px;
+}
+
+/* ==========================================================================
+   2. Slide & Image Management
+   ========================================================================== */
+.carousel-slides {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Sets a unified height for all your images */
+  background-color: #f0f0f0; /* Fallback background color while images load */
+}
+
+.carousel-slides .slide {
+  display: none; /* Hides all images by default */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Forces images to fill space perfectly without stretching */
+}
+
+/* Critical rule triggered by your JavaScript */
+.carousel-slides .slide.active {
+  display: block;
+}
+
+/* ==========================================================================
+   3. Navigation Buttons (Arrows)
+   ========================================================================== */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Perfectly centers arrows vertically */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: #ffffff;
+  border: none;
+  font-size: 24px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%; /* Makes buttons circular */
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  z-index: 10; /* Ensures buttons sit securely on top of images */
+  user-select: none; /* Prevents text highlighting when clicking rapidly */
+}
+
+/* Positioning individual buttons */
+.nav-btn.prev {
+  left: 15px;
+}
+
+.nav-btn.next {
+  right: 15px;
+}
+
+/* Hover & Active click states */
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darkens button on hover */
+}
+
+.nav-btn:active {
+  transform: translateY(-50%) scale(0.95); /* Slight bounce click effect */
+}
+
+.carousel-section h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #072146;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+summary {
+  font-size: 4rem;
+  font-weight: 200;
+  color: #072146;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
 }
