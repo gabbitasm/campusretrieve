@@ -5,15 +5,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body {
   background-color: #ffffff;
   color: #2c2a29;
   line-height: 1.6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* Base header image styling - scales cleanly to match screen widths */
@@ -22,6 +20,22 @@ body {
   height: auto;
   display: block;
 }
+
+p {
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+  color: #595551;
+}
+
+summary {
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: #072146;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
 /* ==========================================================================
    2. Navigation Header
    ========================================================================== */
@@ -76,12 +90,6 @@ nav ul a.active {
   background-color: #ffffff;
 }
 
-.redwood-hero {
-  background-color: #fcfbfa;
-  border-bottom: 1px solid #e7e5e2;
-  padding: 60px 6%;
-  text-align: left;
-}
 /* ==========================================================================
    3. Hero Section
    ========================================================================== */
@@ -100,25 +108,12 @@ nav ul a.active {
   margin-top: 24px;
   padding: 0 6%;
 }
-.redwood-hero p {
-  font-size: 1.2rem;
-  color: #595551;
-  max-width: 700px;
-  font-weight: 300;
-}
-
-.workspace {
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 0 4%;
-}
-.redwood-strip {
-  display: flex;
 
 .redwood-hero p {
   font-size: 1.6rem;
   color: #595551;
   width: 100%;
+  max-width: 700px;
   font-weight: 300;
   padding: 0 6%;
   margin-top: 16px;
@@ -134,6 +129,7 @@ main {
 }
 
 .workspace {
+  max-width: 1100px;
   margin: 50px auto;
   padding: 0 4%;
 }
@@ -151,6 +147,25 @@ main {
   gap: 56px;
 }
 
+#found_lost h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #072146;
+  letter-spacing: -0.5px;
+  margin-top: 24px;
+  padding: 0 6%;
+}
+
+#found_lost img {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Card Strips */
 .redwood-strip {
   width: 100%;
   max-width: 400px;
@@ -162,24 +177,6 @@ main {
   transition: border-color 0.15s ease;
   display: flex;
   flex-direction: column;
-}
-.redwood-strip:hover {
-  border-color: #1d428a;
-}
-@media (max-width: 750px) {
-  .redwood-strip {
-    flex-direction: column;
-  }
-  .strip-image {
-    width: 100% !important;
-    height: 180px !important;
-  }
-}
-.strip-image {
-  width: 300px;
-  height: 100%;
-  gap: 24px;
-  height: 600px;
 }
 
 .redwood-strip:hover {
@@ -199,7 +196,6 @@ main {
   flex-direction: column;
   justify-content: center;
 }
-}
 
 .strip-content h2 {
   font-size: 1.4rem;
@@ -207,45 +203,11 @@ main {
   color: #072146;
   margin-bottom: 8px;
 }
-.strip-content p {
-  font-size: 1rem;
-  color: #595551;
-}
 
 .strip-content p {
   font-size: 1rem;
   color: #595551;
   margin-bottom: 15px;
-}
-#found_lost img {
-  width: 100%;
-  max-width: 600px;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-#found_lost h1 {
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 300;
-  color: #072146;
-  letter-spacing: -0.5px;
-  margin-top: 24px;
-  padding: 0 6%;
-}
-p {
-  margin-bottom: 24px;
-  font-size: 1.05rem;
-  color: #595551;
-}
-
-summary {
-  font-size: 2.5rem;
-  font-weight: 200;
-  color: #072146;
-  letter-spacing: -0.5px;
-  margin-bottom: 8px;
-  cursor: pointer;
 }
 
 /* Helper highlights */
@@ -273,7 +235,9 @@ summary {
   color: #202124;
 }
 
-/* Buttons */
+/* ==========================================================================
+   5. Buttons & Calls to Action
+   ========================================================================== */
 .action-bar {
   text-align: center;
   margin-top: 50px;
@@ -298,8 +262,27 @@ summary {
   background-color: #0d9488;
 }
 
+.btn-inline {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: #1d428a;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-inline:hover {
+  background-color: #f8fafc;
+  border-color: #1d428a;
+}
+
 /* ==========================================================================
-   5. Carousel & Sliders (Global Architecture)
+   6. Carousel & Sliders (Global Architecture)
    ========================================================================== */
 .carousel-container {
   position: relative;
@@ -352,7 +335,7 @@ summary {
 .nav-btn:active { transform: translateY(-50%) scale(0.95); }
 
 /* ==========================================================================
-   6. Footer
+   7. Footer
    ========================================================================== */
 footer {
   margin-top: 120px;
@@ -377,10 +360,9 @@ footer a:hover {
 }
 
 /* ==========================================================================
-   7. Media Queries (Isolated Mobile Specific Adjustments ONLY)
+   8. Media Queries (Isolated Mobile Specific Adjustments ONLY)
    ========================================================================== */
 @media (max-width: 750px) {
-  /* Dynamic layout transformation for small screens */
   nav {
     flex-direction: column;
     gap: 16px;
@@ -406,7 +388,6 @@ footer a:hover {
     background-color: rgba(255, 255, 255, 0.05);
   }
 
-  /* Scale headers down comfortably on small screens */
   .redwood-hero {
     padding: 0 0 30px 0;
     text-align: center;
@@ -422,7 +403,15 @@ footer a:hover {
     padding: 0 4%;
   }
 
-  /* Clean responsive sizes for secondary sub-headers */
+  .redwood-strip {
+    flex-direction: column;
+  }
+
+  .strip-image {
+    width: 100% !important;
+    height: 180px !important;
+  }
+
   .strip-content h2 {
     font-size: 1.25rem;
   }
@@ -430,50 +419,4 @@ footer a:hover {
   summary {
     font-size: 1.6rem;
   }
-}
-
-/* ==========================================================================
-   6. Buttons & Calls to Action
-   ========================================================================== */
-.btn-inline {
-  display: inline-block;
-  align-self: flex-start;
-  background-color: #ffffff;
-  color: #1d428a;
-  text-decoration: none;
-  padding: 8px 20px;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.15s ease;
-  border: 1px solid #cbd5e1;
-}
-
-.btn-inline:hover {
-  background-color: #f8fafc;
-  border-color: #1d428a;
-}
-
-.action-bar {
-  text-align: center;
-  margin-top: 50px;
-  padding-top: 30px;
-  border-top: 1px solid #e7e5e2;
-}
-
-.btn-accent {
-  display: inline-block;
-  background-color: #14b8a6;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 14px 40px;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background 0.15s ease;
-  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
-}
-
-.btn-accent:hover {
-  background-color: #0d9488;
 }
