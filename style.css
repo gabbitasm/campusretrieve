@@ -1,9 +1,9 @@
 /* Here will be our css lmao */
 .header-img {
-        width: 115%;
-        margin-top: -60px;
-        margin-left: -100px;
-      }
+  width: 115%;
+  margin-top: -60px;
+  margin-left: -100px;
+}
 /* ==========================================================================
    1. Core Reset & Base Styles
    ========================================================================== */
@@ -17,7 +17,8 @@ body {
   background-color: #ffffff;
   color: #2c2a29;
   line-height: 1.6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* ==========================================================================
@@ -106,14 +107,12 @@ main {
   margin: 50px auto;
   padding: 0 6%;
   text-align: left;
-  
 }
 
 #lost_found_weekly {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
-
 }
 
 #found_lost {
@@ -304,72 +303,74 @@ footer a:hover {
    1. Core Layout & Container
    ========================================================================== */
 .carousel-container {
-    position: relative;
-    max-width: 600px; /* Limits maximum width of the carousels */
-    margin: 20px auto; /* Centers the carousel horizontally on your page */
-    overflow: hidden;
-    border-radius: 8px; /* Softens corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow */
-    height: 500px;
+  position: relative;
+  max-width: 600px; /* Limits maximum width of the carousels */
+  margin: 20px auto; /* Centers the carousel horizontally on your page */
+  overflow: hidden;
+  border-radius: 8px; /* Softens corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow */
+  height: 500px;
 }
 
 /* ==========================================================================
    2. Slide & Image Management
    ========================================================================== */
 .carousel-slides {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Sets a unified height for all your images */
-    background-color: #f0f0f0; /* Fallback background color while images load */
+  position: relative;
+  width: 100%;
+  height: 400px; /* Sets a unified height for all your images */
+  background-color: #f0f0f0; /* Fallback background color while images load */
 }
 
 .carousel-slides .slide {
-    display: none; /* Hides all images by default */
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Forces images to fill space perfectly without stretching */
+  display: none; /* Hides all images by default */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Forces images to fill space perfectly without stretching */
 }
 
 /* Critical rule triggered by your JavaScript */
 .carousel-slides .slide.active {
-    display: block; 
+  display: block;
 }
 
 /* ==========================================================================
    3. Navigation Buttons (Arrows)
    ========================================================================== */
 .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); /* Perfectly centers arrows vertically */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    color: #ffffff;
-    border: none;
-    font-size: 24px;
-    padding: 12px 16px;
-    cursor: pointer;
-    border-radius: 50%; /* Makes buttons circular */
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    z-index: 10; /* Ensures buttons sit securely on top of images */
-    user-select: none; /* Prevents text highlighting when clicking rapidly */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Perfectly centers arrows vertically */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: #ffffff;
+  border: none;
+  font-size: 24px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%; /* Makes buttons circular */
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  z-index: 10; /* Ensures buttons sit securely on top of images */
+  user-select: none; /* Prevents text highlighting when clicking rapidly */
 }
 
 /* Positioning individual buttons */
 .nav-btn.prev {
-    left: 15px;
+  left: 15px;
 }
 
 .nav-btn.next {
-    right: 15px;
+  right: 15px;
 }
 
 /* Hover & Active click states */
 .nav-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darkens button on hover */
+  background-color: rgba(0, 0, 0, 0.8); /* Darkens button on hover */
 }
 
 .nav-btn:active {
-    transform: translateY(-50%) scale(0.95); /* Slight bounce click effect */
+  transform: translateY(-50%) scale(0.95); /* Slight bounce click effect */
 }
 
 .carousel-section h1 {
