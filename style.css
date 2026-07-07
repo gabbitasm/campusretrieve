@@ -113,7 +113,7 @@ nav ul a.active {
   font-size: 1.6rem;
   color: #595551;
   width: 100%;
-  max-width: 700px;
+  max-width: 1200px;
   font-weight: 300;
   padding: 0 6%;
   margin-top: 16px;
@@ -233,6 +233,7 @@ main {
   margin-bottom: 0;
   font-style: italic;
   color: #202124;
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -297,8 +298,7 @@ main {
 .carousel-slides {
   position: relative;
   width: 100%;
-  max-height: 600px;
-  height: auto;
+  height: 450px;
   background-color: #f0f0f0;
 }
 
