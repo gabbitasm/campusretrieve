@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Safety check: Skip this carousel if buttons or slides are missing
     if (!slides.length || !nextBtn || !prevBtn) {
       console.warn(
-        "Carousel setup failed: Missing slides or navigation buttons.",
+        "Carousel setup failed: Missing slides or navigation buttons inside container.",
         carousel,
       );
       return;
@@ -25,22 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
     function showSlide(index) {
       slides.forEach((slide, i) => {
         if (i === index) {
-          slide.classList.add("active"); // Matches the CSS display: block rule
+          slide.classList.add("active"); // Displays the active slide
         } else {
-          slide.classList.remove("active"); // Matches the CSS display: none rule
+          slide.classList.remove("active"); // Hides the inactive slides
         }
       });
     }
 
     // 4. Set up click event listener for the Next arrow
-    nextBtn.addEventListener("click", () => {
+    nextBtn.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevents jumpy scrolling behaviors
       // Increments the index, loops back to 0 if it hits the end of the array
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
     });
 
     // 5. Set up click event listener for the Previous arrow
-    prevBtn.addEventListener("click", () => {
+    prevBtn.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevents jumpy scrolling behaviors
       // Decrements the index, loops back to the final slide if it drops below 0
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
