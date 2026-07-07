@@ -1,16 +1,44 @@
+/* ==========================================================================
+   1. Core Reset & Base Styles
+   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
+
 body {
   background-color: #ffffff;
   color: #2c2a29;
   line-height: 1.6;
 }
 
+/* Base header image styling - scales cleanly to match screen widths */
+.header-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+p {
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+  color: #595551;
+}
+
+summary {
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: #072146;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   2. Navigation Header
+   ========================================================================== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -19,28 +47,33 @@ nav {
   background-color: #072146;
   border-bottom: 3px solid #1d428a;
 }
+
 .brand-container {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
 }
+
 .nav-logo-img {
   height: 40px;
   width: auto;
   object-fit: contain;
 }
+
 .logo {
   font-size: 1.3rem;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.3px;
 }
+
 nav ul {
   display: flex;
   list-style: none;
   gap: 8px;
 }
+
 nav ul a {
   text-decoration: none;
   color: #e2e8f0;
@@ -50,30 +83,49 @@ nav ul a {
   font-size: 0.95rem;
   transition: all 0.15s ease;
 }
+
 nav ul a:hover,
 nav ul a.active {
   color: #072146;
   background-color: #ffffff;
 }
 
+/* ==========================================================================
+   3. Hero Section
+   ========================================================================== */
 .redwood-hero {
   background-color: #fcfbfa;
   border-bottom: 1px solid #e7e5e2;
-  padding: 60px 6%;
+  padding: 0 0 40px 0; /* Touches top nav bar, keeps 40px bottom padding */
   text-align: left;
 }
+
 .redwood-hero h1 {
   font-size: 2.8rem;
   font-weight: 300;
   color: #072146;
   letter-spacing: -0.5px;
-  margin-bottom: 8px;
+  margin-top: 24px;
+  padding: 0 6%;
 }
+
 .redwood-hero p {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #595551;
+  width: 100%;
   max-width: 700px;
   font-weight: 300;
+  padding: 0 6%;
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   4. Layout Containers & Components
+   ========================================================================== */
+main {
+  margin: 50px auto;
+  padding: 0 6%;
+  text-align: left;
 }
 
 .workspace {
@@ -81,50 +133,84 @@ nav ul a.active {
   margin: 50px auto;
   padding: 0 4%;
 }
+
+/* Original grid behavior for wide screens */
+#lost_found_weekly {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+#found_lost {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 56px;
+}
+
+#found_lost h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #072146;
+  letter-spacing: -0.5px;
+  margin-top: 24px;
+  padding: 0 6%;
+}
+
+#found_lost img {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Card Strips */
 .redwood-strip {
-  display: flex;
+  width: 100%;
+  max-width: 400px;
   background: #ffffff;
   border: 1px solid #e7e5e2;
   border-radius: 6px;
-  margin-bottom: 24px;
+  margin: 0 auto 24px auto;
   overflow: hidden;
   transition: border-color 0.15s ease;
+  display: flex;
+  flex-direction: column;
 }
+
 .redwood-strip:hover {
   border-color: #1d428a;
 }
-@media (max-width: 750px) {
-  .redwood-strip {
-    flex-direction: column;
-  }
-  .strip-image {
-    width: 100% !important;
-    height: 180px !important;
-  }
-}
+
 .strip-image {
-  width: 300px;
-  height: 100%;
-  min-height: 180px;
+  width: 100%;
+  height: 250px;
   background-color: #f1efec;
   object-fit: cover;
 }
+
 .strip-content {
-  padding: 32px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .strip-content h2 {
   font-size: 1.4rem;
   font-weight: 600;
   color: #072146;
   margin-bottom: 8px;
 }
+
 .strip-content p {
   font-size: 1rem;
   color: #595551;
+  margin-bottom: 15px;
 }
+
+/* Helper highlights */
 .subtext-italic {
   font-style: italic;
   color: #8c857f;
@@ -132,12 +218,33 @@ nav ul a.active {
   margin-top: 6px;
 }
 
+.highlight-box {
+  background-color: #fcfbfa;
+  border-left: 4px solid #1d428a;
+  padding: 24px;
+  margin: 35px 0;
+  border-top: 1px solid #e7e5e2;
+  border-right: 1px solid #e7e5e2;
+  border-bottom: 1px solid #e7e5e2;
+  border-radius: 0 4px 4px 0;
+}
+
+.highlight-box p {
+  margin-bottom: 0;
+  font-style: italic;
+  color: #202124;
+}
+
+/* ==========================================================================
+   5. Buttons & Calls to Action
+   ========================================================================== */
 .action-bar {
   text-align: center;
   margin-top: 50px;
   padding-top: 30px;
   border-top: 1px solid #e7e5e2;
 }
+
 .btn-accent {
   display: inline-block;
   background-color: #14b8a6;
@@ -150,10 +257,86 @@ nav ul a.active {
   transition: background 0.15s ease;
   box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
 }
+
 .btn-accent:hover {
   background-color: #0d9488;
 }
 
+.btn-inline {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: #1d428a;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-inline:hover {
+  background-color: #f8fafc;
+  border-color: #1d428a;
+}
+
+/* ==========================================================================
+   6. Carousel & Sliders (Global Architecture)
+   ========================================================================== */
+.carousel-container {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-slides {
+  position: relative;
+  width: 100%;
+  max-height: 600px;
+  height: auto;
+  background-color: #f0f0f0;
+}
+
+.carousel-slides .slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-slides .slide.active {
+  display: block;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border: none;
+  font-size: 24px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  z-index: 10;
+  user-select: none;
+}
+
+.nav-btn.prev { left: 15px; }
+.nav-btn.next { right: 15px; }
+.nav-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
+.nav-btn:active { transform: translateY(-50%) scale(0.95); }
+
+/* ==========================================================================
+   7. Footer
+   ========================================================================== */
 footer {
   margin-top: 120px;
   padding: 40px 20px;
@@ -163,13 +346,77 @@ footer {
   gap: 40px;
   background-color: #ffffff;
 }
+
 footer a {
   color: #595551;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
 }
+
 footer a:hover {
   color: #1d428a;
   text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. Media Queries (Isolated Mobile Specific Adjustments ONLY)
+   ========================================================================== */
+@media (max-width: 750px) {
+  nav {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 20px 4%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .redwood-hero {
+    padding: 0 0 30px 0;
+    text-align: center;
+  }
+
+  .redwood-hero h1 {
+    font-size: 1.8rem;
+    padding: 0 4%;
+  }
+
+  .redwood-hero p {
+    font-size: 1.15rem;
+    padding: 0 4%;
+  }
+
+  .redwood-strip {
+    flex-direction: column;
+  }
+
+  .strip-image {
+    width: 100% !important;
+    height: 180px !important;
+  }
+
+  .strip-content h2 {
+    font-size: 1.25rem;
+  }
+
+  summary {
+    font-size: 1.6rem;
+  }
 }

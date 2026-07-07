@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Campus Retrieve - Home</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo.png" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <nav>
@@ -24,42 +26,175 @@
       </ul>
     </nav>
     <header class="redwood-hero">
-      <h1>Campus Retrieve</h1>
+      <img src="images/home_page2.png" alt="Home Page" class="header-img" />
       <p>
-        The centralized framework for modern administrative tracking and asset
-        resolution at BYU-Idaho.
+        Campus Retrieve bridges the gap between what's missing and what's
+        possible — leveraging technology to reunite people with their belongings
+        while creating community through weekly reward-driven experiences.
       </p>
     </header>
     <main class="workspace">
-      <section class="redwood-strip">
-        <img
-          src="images/home-lost.jpg"
-          alt="Lost asset track layout"
-          class="strip-image"
-        />
-        <div class="strip-content">
-          <h2>Lost Something?</h2>
+      <div id="lost_found_weekly">
+        <section class="redwood-strip">
+          <img
+            src="images/robber.webp"
+            alt="Lost asset track layout"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Lost Something Important?</h2>
+
+            <a href="lost.html" class="btn-inline">Find My Item</a>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img
+            src="images/fortnite.jpeg"
+            alt="Found asset log layout"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Found Something That Isn't Yours?</h2>
+
+            <a href="found.html" class="btn-inline">Turn In Item</a>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img
+            src="images/clown-cat.jpeg"
+            alt="Found asset log layout"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Looking For Weekly Giveaways?</h2>
+            <a href="found.html" class="btn-inline">Weekly Giveaways</a>
+          </div>
+        </section>
+      </div>
+      <div id="found_lost">
+        <!-- Section 1: Recently Found Items -->
+        <section class="carousel-section">
+          <h1>Recently Found Items</h1>
+
+          <div class="carousel-container" id="carousel-1">
+            <div class="carousel-slides">
+              <!-- Verify these relative image paths match your local folders -->
+              <img
+                src="images/monkey.jpeg"
+                class="slide"
+                alt="Found Monkey Plushie"
+              />
+              <img
+                src="images/airplane.jpeg"
+                class="slide"
+                alt="Found Toy Airplane"
+              />
+              <img
+                src="images/baby.jpeg"
+                class="slide"
+                alt="Found Lobster Keychain"
+              />
+              <img
+                src="images/mace.jpeg"
+                class="slide"
+                alt="Found Monkey Plushie"
+              />
+            </div>
+
+            <!-- Navigation Buttons with unique directional classes -->
+            <button class="nav-btn prev" aria-label="Previous Slide">❮</button>
+            <button class="nav-btn next" aria-label="Next Slide">❯</button>
+          </div>
+        </section>
+
+        <!-- Section 2: Recently Lost Items -->
+        <section class="carousel-section">
+          <h1>Recently Lost Items</h1>
+
+          <div class="carousel-container" id="carousel-2">
+            <div class="carousel-slides">
+              <!-- Verify these relative image paths match your local folders -->
+              <img
+                src="images/moldy-bread.jpeg"
+                class="slide"
+                alt="Lost Monkey Plushie"
+              />
+              <img
+                src="images/penknife.jpeg"
+                class="slide"
+                alt="Lost Toy Airplane"
+              />
+              <img
+                src="images/machine-gun.jpeg"
+                class="slide"
+                alt="Found Toy Airplane"
+              />
+              <img
+                src="images/baby2.jpeg"
+                class="slide"
+                alt="Found Toy Airplane"
+              />
+            </div>
+
+            <!-- Navigation Buttons with unique directional classes -->
+            <button class="nav-btn prev" aria-label="Previous Slide">❮</button>
+            <button class="nav-btn next" aria-label="Next Slide">❯</button>
+          </div>
+        </section>
+      </div>
+
+      <section class="redwood-hero">
+        <details>
+          <summary>Retrieval Policy</summary>
           <p>
-            Query open inventory data paths or securely register an active
-            missing item profile with our intake handlers.
+            Our ultimate goal is to reunite you with your long-lost property as
+            quickly and safely as possible—balancing ironclad campus security
+            with standard student convenience. However, because our public
+            website essentially lets the entire internet browse the digital
+            graveyard of your lost things, we can't just hand out MacBooks to
+            anyone with a convincing sad face, meaning you’ll have to survive
+            our verification gauntlet first. To successfully unlock your
+            property from our custody, you must provide distinctive details not
+            visible online—like a specific scratch, a quirky anime keychain, or
+            the exact, deeply embarrassing contents of your backpack—and if you
+            are claiming an electronic device, you must successfully unlock it
+            via password or biometrics right in front of our unimpressionable
+            staff. To finalize the rescue mission, you’ll need to flash your
+            official Student ID Card, though if you managed to lose that too, a
+            government photo ID paired with digital proof of enrollment from
+            your student portal will suffice. If you are stuck in a brutal
+            three-hour lab or are too sick to move, you can send a trusted
+            proxy, provided you email us from your official student account with
+            their full name ahead of time; your designated minion must then show
+            their own Student ID and assume full, terrifying financial and
+            social responsibility for your item the moment it hits their hands.
+            <br /><br />
+
+            Please keep in mind that space is a premium commodity, and because
+            we are running a capitalist thunderdome and not your personal
+            storage locker, your abandoned items are on a strict doomsday clock
+            heading straight for the campus auction block. Absolutely nothing
+            escapes the gavel. Perishable goods, unwashed gym gear, and open
+            liquids will be auctioned off within 24 hours to the bravest, most
+            iron-stomached bidder before they become a biohazard. Standard items
+            like textbooks, keys, backpacks, and clothing get 30 days before
+            hitting the stage, while high-value treasures get a 60-day grace
+            period. Yes, this includes your laptops, smartphones, wallets, cash,
+            and even your official state or federal documents—all sold as-is to
+            the highest bidder. And no, we will not be wiping any hard drives or
+            deleting any data, so if you don't claim your laptop in time, the
+            highest bidder inherits your entire digital life, your unfinished
+            essays, and your bizarre search history. All auction proceeds and
+            unclaimed cash are funneled directly into student scholarship funds,
+            so thank you for funding someone's education with your carelessness.
+            Ultimately, our staff reserves the absolute right to deny the return
+            of any item if your story feels a bit too fictional, and
+            intentionally trying to claim property that doesn’t belong to you
+            explicitly violates the Student Code of Conduct—meaning we will
+            report you to the Dean faster than you can say "going once, going
+            twice, sold!"
           </p>
-          <a href="lost.html" class="btn-inline">Find My Item</a>
-        </div>
-      </section>
-      <section class="redwood-strip">
-        <img
-          src="images/home-found.jpg"
-          alt="Found asset log layout"
-          class="strip-image"
-        />
-        <div class="strip-content">
-          <h2>Found Something?</h2>
-          <p>
-            Turn in discovered property to systematic repository networks across
-            campus for immediate reconciliation.
-          </p>
-          <a href="found.html" class="btn-inline">Turn In Item</a>
-        </div>
+        </details>
       </section>
     </main>
     <footer>
