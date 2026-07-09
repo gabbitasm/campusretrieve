@@ -51,4 +51,80 @@ document.addEventListener("DOMContentLoaded", () => {
     // 6. Initialize the first slide visibility for this carousel on page load
     showSlide(currentSlide);
   });
+
+  // Lost & Found report form: submits to the Campus Retrieve Apps Script Web App
+  const REPORT_ENDPOINT =
+    "https://script.google.com/a/macros/byui.edu/s/AKfycbx8eUnk2VHzGlxzQqAtPVr5OG1XQP8lWtyXwVDHMCTB0etWdzs7fJEfaMwI99ITvjDe/exec";
+
+  const reportForm = document.getElementById("report-form");
+  const confirmation = document.getElementById("report-confirmation");
+
+  if (reportForm && confirmation) {
+    reportForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // 1. Require the essentials before anything gets sent
+      const fullName = document.getElementById("full-name").value.trim();
+      const contactEmail = document.getElementById("contact-email").value.trim();
+      const itemDescription = document
+        .getElementById("item-description")
+        .value.trim();
+
+      if (!fullName || !contactEmail || !itemDescription) {
+        confirmation.textContent =
+          "Please fill in your name, email, and item description before submitting.";
+        confirmation.style.color = "#c0392b";
+        confirmation.hidden = false;
+        return;
+      }
+
+      // 2. Gather the rest of the fields by their existing IDs
+      const reportType = reportForm.querySelector(
+        'input[name="report-type"]:checked',
+      )?.value;
+
+      const payload = {
+        reportType,
+        fullName,
+        contactEmail,
+        itemDescription,
+        itemDate: document.getElementById("item-date").value,
+        itemLocation: document.getElementById("item-location").value,
+        itemWorth: document.getElementById("item-worth").value,
+        rewardOffered: document.getElementById("reward-offered").value,
+        bloodType: document.getElementById("blood-type").value,
+        conspiracyTheory: document.getElementById("conspiracy-theory").value,
+        funFact: document.getElementById("fun-fact").value,
+        iqLevel: document.getElementById("iq-level").value,
+        gamingHours: document.getElementById("gaming-hours").value,
+        relationshipStatus: document.getElementById("relationship-status")
+          .value,
+      };
+
+      // 3. Apps Script doesn't send CORS headers, so the response is opaque
+      // under no-cors and can't be read — text/plain avoids a preflight
+      // that Apps Script would fail anyway, while doPost() still JSON.parses
+      // the raw body on the other end. Assume success if fetch doesn't throw.
+      fetch(REPORT_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      })
+        .then(() => {
+          confirmation.textContent =
+            "Report logged. A Josh will be with you shortly.";
+          confirmation.style.color = "";
+          confirmation.hidden = false;
+          reportForm.reset();
+        })
+        .catch((err) => {
+          console.warn("Report submission failed:", err);
+          confirmation.textContent =
+            "Something went wrong sending your report. Please try again.";
+          confirmation.style.color = "#c0392b";
+          confirmation.hidden = false;
+        });
+    });
+  }
 });
