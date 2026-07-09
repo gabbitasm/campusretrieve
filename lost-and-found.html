@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Retrieve - Lost & Found</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo.png" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="brand-container">
+        <img
+          src="images/logo.png"
+          alt="Campus Retrieve Shield Logo"
+          class="nav-logo-img"
+        />
+        <span class="logo">Campus Retrieve</span>
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lost-and-found.html" class="active">Lost & Found</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+    <header class="redwood-hero">
+      <img
+        src="images/lost-found.png"
+        alt="Lost and Found Items Page"
+        class="header-img"
+      />
+      <p>
+        Search active records for what's missing, log what you've discovered,
+        and cross-reference both against verified student property claims.
+      </p>
+    </header>
+    <main class="workspace">
+      <div id="lost_found_weekly">
+        <section class="redwood-strip">
+          <img
+            src="images/gold scar.jpg"
+            alt="High worth search block"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Lost a High-Worth Item?</h2>
+            <p>
+              Identifiable credentials, cellular nodes, and physical financial
+              infrastructure assets undergo escalated custody controls.
+            </p>
+            <p class="subtext-italic">(Keys, electronics, wallets...)</p>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img
+            src="images/ugly-fish.gif"
+            alt="General lost item bucket block"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Lost General Belongings?</h2>
+            <p>
+              Standard functional wear, storage containers, and reference
+              materials are routed to central warehouse processing rows.
+            </p>
+            <p class="subtext-italic">(Water bottles, notebooks, clothing...)</p>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img
+            src="images/found-items.png"
+            alt="found items"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Found Something of High Worth?</h2>
+            <p>
+              Items containing identifiable data, credentials, or significant
+              market value demand immediate drop-box storage containment
+              pipelines.
+            </p>
+            <p class="subtext-italic">(You didn't steal it... right?)</p>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img
+            src="images/campus_search.png"
+            alt="Campus search"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Looking For Something You Lost?</h2>
+            <p>
+              Run immediate validation structural searches on verified item
+              databases to cross-check recovery timestamps.
+            </p>
+            <p class="subtext-italic">(It is yours.... right?)</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="report-form-section">
+        <h2>File a Report</h2>
+        <p>
+          Fill this out for either a lost or found item. Keep the details
+          light — if it's a backpack, "it's a backpack" is plenty. Save the
+          granola-bar backstory for yourself.
+        </p>
+        <form id="report-form" class="report-form">
+          <fieldset>
+            <legend>What are you reporting?</legend>
+            <label class="radio-inline">
+              <input type="radio" name="report-type" value="lost" checked />
+              I lost an item
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="report-type" value="found" />
+              I found an item
+            </label>
+          </fieldset>
+
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" required />
+
+          <label for="contact-email">Contact Email</label>
+          <input type="email" id="contact-email" name="contact-email" required />
+
+          <label for="item-description">Item Description</label>
+          <textarea
+            id="item-description"
+            name="item-description"
+            rows="3"
+            required
+          ></textarea>
+
+          <label for="item-date">Date Lost / Found</label>
+          <input type="date" id="item-date" name="item-date" />
+
+          <label for="item-location">Location on Campus</label>
+          <input type="text" id="item-location" name="item-location" />
+
+          <label for="item-worth">Estimated Worth ($)</label>
+          <input type="number" id="item-worth" name="item-worth" min="0" step="0.01" />
+
+          <label for="reward-offered">Reward Offered ($, optional)</label>
+          <input
+            type="number"
+            id="reward-offered"
+            name="reward-offered"
+            min="0"
+            step="0.01"
+            placeholder="Only applies if you're reporting a lost item"
+          />
+
+          <label for="blood-type">Blood Type</label>
+          <select id="blood-type" name="blood-type">
+            <option value="">Prefer not to say</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
+
+          <label for="conspiracy-theory">Favorite Conspiracy Theory</label>
+          <input type="text" id="conspiracy-theory" name="conspiracy-theory" />
+
+          <label for="fun-fact">Fun Fact About You</label>
+          <input type="text" id="fun-fact" name="fun-fact" />
+
+          <label for="iq-level">IQ Level</label>
+          <input
+            type="number"
+            id="iq-level"
+            name="iq-level"
+            min="0"
+            max="300"
+            placeholder="Purely for our records. No judgment."
+          />
+
+          <label for="gaming-hours">Average Video Game Hours / Week</label>
+          <input
+            type="number"
+            id="gaming-hours"
+            name="gaming-hours"
+            min="0"
+            max="168"
+          />
+
+          <label for="relationship-status">Relationship Status</label>
+          <select id="relationship-status" name="relationship-status">
+            <option value="">Prefer not to say</option>
+            <option value="single">Single</option>
+            <option value="taken">Taken</option>
+            <option value="complicated">It's complicated</option>
+            <option value="married">Married</option>
+          </select>
+
+          <button type="submit" class="btn-accent">Submit Report</button>
+          <p id="report-confirmation" class="report-confirmation" hidden>
+            Report logged. A Josh will be with you shortly.
+          </p>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <a href="about.html">About Us</a>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor"
+        target="_blank"
+        >Contact Us</a
+      >
+    </footer>
+  </body>
+</html>
