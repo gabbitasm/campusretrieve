@@ -116,7 +116,7 @@ nav ul a.active {
   max-width: 1200px;
   font-weight: 300;
   padding: 0 6%;
-  margin-top: 16px;
+  margin: 16px auto 0 auto;
 }
 
 /* ==========================================================================
@@ -138,6 +138,14 @@ main {
 #lost_found_weekly {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Fixed 2x2 grid for the Lost & Found item-category cards, so 4 cards
+   balance evenly instead of wrapping into a row of 3 and a row of 1 */
+#item-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -492,6 +500,10 @@ footer a:hover {
 
   .redwood-strip {
     flex-direction: column;
+  }
+
+  #item-categories {
+    grid-template-columns: 1fr;
   }
 
   .strip-image {
