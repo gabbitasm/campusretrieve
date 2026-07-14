@@ -127,4 +127,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   }
+
+  // Weekly giveaways entry form: no backend yet, just a client-side confirmation
+  const giveawayForm = document.getElementById("giveaway-form");
+  const giveawayConfirmation = document.getElementById(
+    "giveaway-confirmation",
+  );
+
+  if (giveawayForm && giveawayConfirmation) {
+    giveawayForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      giveawayConfirmation.hidden = false;
+      giveawayForm.reset();
+    });
+  }
 });

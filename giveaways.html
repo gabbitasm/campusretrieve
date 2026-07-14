@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Retrieve - Weekly Giveaways</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo.png" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="brand-container">
+        <img
+          src="images/logo.png"
+          alt="Campus Retrieve Shield Logo"
+          class="nav-logo-img"
+        />
+        <span class="logo">Campus Retrieve</span>
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lost-and-found.html">Lost & Found</a></li>
+        <li><a href="giveaways.html" class="active">Giveaways</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+    <header class="redwood-hero">
+      <h1>Weekly Giveaways</h1>
+      <p>
+        Every week, whatever's still sitting in the bin after 30 days doesn't
+        go to auction — it goes to you. No purchase necessary. No dignity
+        necessary either.
+      </p>
+    </header>
+    <main class="workspace">
+      <div id="lost_found_weekly">
+        <section class="redwood-strip">
+          <img
+            src="images/dorito-slides.webp"
+            alt="A single Dorito chip"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Grand Prize: One (1) Dorito</h2>
+            <p>
+              Found pristine inside a textbook. Nacho cheese flavor,
+              theoretically. We haven't tested it and neither should you.
+            </p>
+            <p class="subtext-italic">(A single chip. Not a bag. A chip.)</p>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img src="images/fish.jpeg" alt="An unidentified fish" class="strip-image" />
+          <div class="strip-content">
+            <h2>Runner Up: A Fish</h2>
+            <p>
+              Species unconfirmed. Origin unconfirmed. Currently unclaimed for
+              reasons we choose not to speculate on.
+            </p>
+            <p class="subtext-italic">(Please pick it up promptly.)</p>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img
+            src="images/lobster-slides.jpeg"
+            alt="A lobster"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Third Place: A Lobster</h2>
+            <p>
+              Found in the dorm laundry room. We have questions. We are
+              choosing not to ask them. It's yours now.
+            </p>
+            <p class="subtext-italic">(Butter not included.)</p>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img
+            src="images/miscellaneous.jpeg"
+            alt="A box of miscellaneous items"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Consolation Prize: A Box of Stuff</h2>
+            <p>
+              We genuinely don't know what's in here. Neither will you until
+              you open it. That's half the fun. The other half is unclear.
+            </p>
+            <p class="subtext-italic">(Contents may have contents.)</p>
+          </div>
+        </section>
+        <section class="redwood-strip">
+          <img
+            src="images/shoe-phone.jpeg"
+            alt="A shoe that is also a phone"
+            class="strip-image"
+          />
+          <div class="strip-content">
+            <h2>Honorable Mention: A Shoe Phone</h2>
+            <p>
+              Spy technology or foot-related emergency? We couldn't tell you.
+              It rings sometimes. We don't answer it anymore.
+            </p>
+            <p class="subtext-italic">(Get smart. Literally.)</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="report-form-section">
+        <h2>Enter This Week's Drawing</h2>
+        <p>
+          One entry per person, mostly on the honor system. Winners are
+          selected at random, except when a Josh really wants the lobster,
+          in which case the odds shift accordingly.
+        </p>
+        <form id="giveaway-form" class="report-form">
+          <label for="giveaway-prize">Which Prize Do You Want?</label>
+          <select id="giveaway-prize" name="giveaway-prize" required>
+            <option value="">Select a prize</option>
+            <option value="dorito">One (1) Dorito</option>
+            <option value="fish">A Fish</option>
+            <option value="lobster">A Lobster</option>
+            <option value="mystery-box">A Box of Stuff</option>
+            <option value="shoe-phone">A Shoe Phone</option>
+          </select>
+
+          <label for="giveaway-name">Full Name</label>
+          <input type="text" id="giveaway-name" name="giveaway-name" required />
+
+          <label for="giveaway-email">Contact Email</label>
+          <input type="email" id="giveaway-email" name="giveaway-email" required />
+
+          <label for="giveaway-reason">Why Do You Deserve To Win?</label>
+          <textarea
+            id="giveaway-reason"
+            name="giveaway-reason"
+            rows="3"
+            placeholder="Be persuasive. The lobster is watching."
+          ></textarea>
+
+          <button type="submit" class="btn-accent">Enter Drawing</button>
+          <p id="giveaway-confirmation" class="report-confirmation" hidden>
+            You're entered. Odds of winning: technically nonzero.
+          </p>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <a href="about.html">About Us</a>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSedi1RdAEYi9gVZ1KjlD9Xtfbxm0CRY-34gP3lxwaejX1IWLw/viewform?usp=publish-editor"
+        target="_blank"
+        >Contact Us</a
+      >
+    </footer>
+  </body>
+</html>
